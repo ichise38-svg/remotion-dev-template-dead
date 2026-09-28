@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "title": "デッドキャットバウンスとは",
+    "fps": 30,
+    "width": 1080,
+    "height": 1920,
+    "audioSrc": "audio/narration.mp3",
+    "audioDurationInSeconds": 24.451,
+    "totalDurationInFrames": 734
+  },
+  "scenes": [
+    {
+      "id": "scene1_hook",
+      "durationInFrames": 101,
+      "backgroundImage": "images/spx_current_chart.png",
+      "text": "S&P500が\n最高値更新中。\nでも──",
+      "cta": false
+    },
+    {
+      "id": "scene2_2022example",
+      "durationInFrames": 240,
+      "backgroundImage": "images/spx_2022_chart.png",
+      "text": "2022年は4,800から下落後、\n3月・6月・8月と3回反発しては\nそのたび安値を更新",
+      "cta": false
+    },
+    {
+      "id": "scene3_definition",
+      "durationInFrames": 184,
+      "backgroundImage": "images/spx_2022_chart.png",
+      "text": "これが\nデッドキャットバウンス。\n下落途中の一時的な反発です",
+      "cta": false
+    },
+    {
+      "id": "scene4_now",
+      "durationInFrames": 127,
+      "backgroundImage": "images/spx_current_chart.png",
+      "text": "今年9月も利上げ後に急反発し\n最高値を更新",
+      "cta": false
+    },
+    {
+      "id": "scene5_cta",
+      "durationInFrames": 82,
+      "backgroundImage": null,
+      "text": "保存して\n見極めてください",
+      "cta": true
+    }
+  ]
+}
