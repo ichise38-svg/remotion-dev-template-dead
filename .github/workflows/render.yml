@@ -1,0 +1,38 @@
+name: Render Video
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Chrome headless shell dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libnss3 libatk1.0-0 libatk-bridge2.0-0 libcups2 libdrm2 \
+            libxkbcommon0 libxcomposite1 libxdamage1 libxfixes3 libxrandr2 \
+            libgbm1 libasound2t64 libpango-1.0-0 libpangocairo-1.0-0
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Render video
+        run: npx remotion render src/index.ts MainVideo out/deadcat_bounce.mp4
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: deadcat_bounce
+          path: out/deadcat_bounce.mp4
